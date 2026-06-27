@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe - Start</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background:
+        radial-gradient(circle at top, rgba(0, 255, 200, 0.25), transparent 45%),
+        radial-gradient(circle at bottom, rgba(255, 0, 140, 0.20), transparent 50%),
+        linear-gradient(135deg, #0f172a, #111827);
+      overflow: hidden;
+    }
+
+    .card {
+      width: min(520px, 92vw);
+      padding: 32px 22px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      position: relative;
+      animation: floaty 4.5s ease-in-out infinite;
+    }
+
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .title {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing: 1px;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      margin: 0 0 22px;
+      color: rgba(255,255,255,0.80);
+      line-height: 1.4;
+      font-size: 15px;
+    }
+
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-weight: 700;
+      font-size: 13px;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .start-btn {
+      border: none;
+      cursor: pointer;
+      width: 180px;
+      height: 52px;
+      border-radius: 14px;
+      font-size: 18px;
+      font-weight: 900;
+      color: #052e1c;
+      background: linear-gradient(90deg, #22c55e, #7cfc00);
+      box-shadow: 0 12px 30px rgba(34, 197, 94, 0.35);
+      transition: transform 0.15s ease, filter 0.15s ease;
+      outline: none;
+      position: relative;
+    }
+
+    .start-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+    }
+
+    .start-btn:active {
+      transform: translateY(0px) scale(0.99);
+    }
+
+    .start-btn::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 16px;
+      background: linear-gradient(90deg, rgba(34,197,94,0.0), rgba(34,197,94,0.45), rgba(124,252,0,0.0));
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      z-index: -1;
+    }
+
+    .start-btn:hover::after {
+      opacity: 1;
+    }
+
+    .hint {
+      margin-top: 16px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.70);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card" id="Start">
+    <h1 class="title">TIC TAC TOE</h1>
+
+    <div class="badge-row">
+      <div class="badge">Player vs Player</div>
+      <div class="badge">Quick Match</div>
+    </div>
+
+    <p class="subtitle">
+      Click <b>Start</b>, then take turns placing <b>X</b> and <b>O</b>.
+      First to align 3 in a row wins!
+    </p>
+
+    <button
+      class="start-btn"
+      type="button"
+      onclick="location.href='index.html'"
+      aria-label="Start Tic Tac Toe"
+    >
+      START
+    </button>
+
+    <div class="hint">Tip: Use Reset after the match.</div>
+  </div>
+</body>
+</html>
+
